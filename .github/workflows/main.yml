@@ -5,7 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/setup-node@v4
-    - name: NodeJS
-      run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
-    - name: Instakk
+    - name: Install
       run: npm install @uppy/xhr-upload
