@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>dwssw</title>
+</head>
+<script>
+import Uppy from '@uppy/core';
+import Dashboard from '@uppy/dashboard';
+import XHR from '@uppy/xhr-upload';
+
+import '@uppy/core/dist/style.min.css';
+import '@uppy/dashboard/dist/style.min.css';
+
+new Uppy()
+	.use(Dashboard, { inline: true, target: 'body' })
+	.use(XHR, { endpoint: 'https://dwssw.github.io/upload' });
+</script>
+
+
+
+
+
+
+</html>
