@@ -7,3 +7,11 @@ jobs:
     - uses: actions/setup-node@v4
     - name: Install
       run: npm install @uppy/xhr-upload
+    - name: Work
+      run: import Uppy from '@uppy/core';
+    - name: Work
+      run: import Dashboard from '@uppy/dashboard';
+    - name: Work
+      run: import '@uppy/core/dist/style.min.css';
+    - name: Work
+      run: import '@uppy/core/dist/style.min.css';
