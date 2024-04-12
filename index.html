@@ -12,9 +12,28 @@ import XHR from '@uppy/xhr-upload';
 import '@uppy/core/dist/style.min.css';
 import '@uppy/dashboard/dist/style.min.css';
 
-new Uppy()
-	.use(Dashboard, { inline: true, target: 'body' })
-	.use(XHR, { endpoint: 'https://dwssw.github.io/upload' });
+  var TUS_ENDPOINT = 'https://tusd.tusdemo.net/files/'
+  var COMPANION_ENDPOINT = 'https://dowsya.ix.tc'
+  if (location.hostname === 'uppy.io') {
+    COMPANION_ENDPOINT = '//companion.uppy.io'
+  }
+
+  var uppy = Uppy.Core({ debug: true })
+    .use(Uppy.Dashboard, {
+      target: '#demo',
+      inline: true,
+      replaceTargetContent: true,
+      metaFields: [
+        { id: 'license', name: 'License', placeholder: 'specify license' },
+        { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }
+      ]
+    })
+    .use(Uppy.Webcam, { target: Uppy.Dashboard })
+    .use(Uppy.Tus, { endpoint: TUS_ENDPOINT})
+
+  uppy.on('success', function (files) {
+    console.log('Upload complete! We’ve uploaded these files:', files)
+  })
 </script>
 
 
