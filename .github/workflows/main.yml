@@ -1,11 +1,11 @@
-name: İhtiyaçlar
-on: [push]
+name: CI
+on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-  - name: NodeJS
-  uses: actions/setup-node@v4
-  with:
-  - name: Install Dependencies
-  run: npm install @uppy/xhr-upload
+    - uses: actions/setup-node@v4
+    - name: NodeJS
+      run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
+    - name: Instakk
+      run: npm install @uppy/xhr-upload
