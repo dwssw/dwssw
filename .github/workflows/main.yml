@@ -1,6 +1,11 @@
-- name: Setup Node
+name: İhtiyaçlar
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+  - name: NodeJS
   uses: actions/setup-node@v4
   with:
-  node-version: 'latest'
   - name: Install Dependencies
   run: npm install @uppy/xhr-upload
